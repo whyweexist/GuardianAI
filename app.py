@@ -3,9 +3,14 @@ import os
 import sys
 from PIL import Image
 from pathlib import Path
+# Add current directory and 'modules' subdirectory to sys.path
+base_dir = Path(__file__).resolve().parent
+sys.path.append(str(base_dir))
+sys.path.append(str(base_dir / 'modules'))
 
-# Add modules to path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# # Add modules to path
+# sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'modules'))
 
 # Import modules
 from modules.ip_registration.registration import register_ip
