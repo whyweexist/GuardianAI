@@ -70,13 +70,13 @@ with st.sidebar:
             # Simulate wallet connection
             st.session_state.wallet_connected = True
             st.session_state.account = "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.success(f"Connected: {st.session_state.account[:6]}...{st.session_state.account[-4:]}")
         if st.button("Disconnect"):
             st.session_state.wallet_connected = False
             st.session_state.account = None
-            st.experimental_rerun()
+            st.rerun()
     
     st.markdown("---")
     st.markdown("### Navigation")
@@ -86,7 +86,7 @@ with st.sidebar:
     for tab in tabs:
         if st.button(tab, key=f"nav_{tab}"):
             st.session_state.active_tab = tab
-            st.experimental_rerun()
+            st.rerun()
 
 # Main content
 if not st.session_state.wallet_connected:
@@ -186,7 +186,7 @@ else:
                     st.markdown("**Source:** example.com/logo")
                     if st.button("Take Action", key="action1"):
                         st.session_state.active_tab = "Recommendations"
-                        st.experimental_rerun()
+                        st.rerun()
                 
                 with col2:
                     st.markdown("### Potential Infringement #2")
@@ -195,7 +195,7 @@ else:
                     st.markdown("**Source:** anothersite.org/brand")
                     if st.button("Take Action", key="action2"):
                         st.session_state.active_tab = "Recommendations"
-                        st.experimental_rerun()
+                        st.rerun()
     
     elif st.session_state.active_tab == "Recommendations":
         st.title("Licensing Recommendations")
@@ -209,14 +209,14 @@ else:
             st.markdown("### Your IP Asset")
             st.image("https://ipfs.io/ipfs/QmNtxgPZMUHZJ35yvHnbRNUTVNwniRBhLHQK5zYKiRwxHi", width=200)
             st.markdown("**Asset Name:** Logo - Brand X")
-            st.markdown("**Registration Date:** 2023-05-15")
+            st.markdown("**Registration Date:** 2025-05-15")
         
         with col2:
             st.markdown("### Detected Infringement")
             st.image("https://ipfs.io/ipfs/QmPAqZ4EP5joAJpGDFRHhHnpYUfUm1FQKpJ2vgKTdKjHQz", width=200)
             st.markdown("**Similarity Score:** 87%")
             st.markdown("**Source:** example.com/logo")
-            st.markdown("**Detection Date:** 2023-06-10")
+            st.markdown("**Detection Date:** 2025-06-10")
         
         st.markdown("---")
         st.subheader("Recommended Actions")
@@ -300,7 +300,7 @@ Sincerely,
         
         with st.expander("Dispute #1: Logo Infringement - Brand X vs. Company Y"):
             st.markdown("**Status:** Pending Arbitration")
-            st.markdown("**Filed Date:** 2023-06-15")
+            st.markdown("**Filed Date:** 2025-06-15")
             st.markdown("**Description:** Company Y is using a logo that is 87% similar to Brand X's registered trademark.")
             
             col1, col2 = st.columns(2)
@@ -332,7 +332,7 @@ Sincerely,
         
         with st.expander("Dispute #2: Name Usage - Product Y vs. Service Z"):
             st.markdown("**Status:** In Settlement Negotiation")
-            st.markdown("**Filed Date:** 2023-05-20")
+            st.markdown("**Filed Date:** 2025-05-20")
             st.markdown("**Description:** Service Z is using a name that is confusingly similar to Product Y's registered trademark.")
             
             st.markdown("### Settlement Proposal")
@@ -368,7 +368,7 @@ Sincerely,
         ip_data = {
             "Asset Name": ["Logo - Brand X", "Name - Product Y", "Design - Pattern Z"],
             "Type": ["Logo", "Name", "Design"],
-            "Registration Date": ["2023-05-15", "2023-04-22", "2023-06-01"],
+            "Registration Date": ["2025-05-15", "2025-04-22", "2025-06-01"],
             "IPFS Hash": ["QmXyZ123...", "QmAbc456...", "QmDef789..."],
             "Status": ["Active", "Active", "Active"]
         }
@@ -380,8 +380,8 @@ Sincerely,
             "Licensee": ["Company A", "Individual B"],
             "Asset": ["Logo - Brand X", "Design - Pattern Z"],
             "Type": ["Commercial", "Derivative"],
-            "Start Date": ["2023-05-20", "2023-06-10"],
-            "End Date": ["2024-05-20", "2023-12-10"],
+            "Start Date": ["2025-05-20", "2025-06-10"],
+            "End Date": ["2026-05-20", "2025-12-10"],
             "Revenue": ["0.5 ETH", "0.2 ETH"]
         }
         st.dataframe(license_data)
@@ -392,7 +392,7 @@ Sincerely,
             "Asset": ["Logo - Brand X", "Name - Product Y"],
             "Similarity": ["87%", "92%"],
             "Source": ["example.com/logo", "anothersite.org/brand"],
-            "Detection Date": ["2023-06-10", "2023-06-08"],
+            "Detection Date": ["2025-06-10", "2025-06-08"],
             "Status": ["Action Pending", "License Offered"]
         }
         st.dataframe(alert_data)
@@ -416,6 +416,6 @@ Sincerely,
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center">
-    <p>© 2023 Trademark Licensing Platform | Powered by Story Protocol</p>
+    <p>© 2025 GuardianAI | Powered by Bhopal DAO @StoryBuildersIN</p>
 </div>
 """, unsafe_allow_html=True)

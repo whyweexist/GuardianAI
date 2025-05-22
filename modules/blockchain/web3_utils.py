@@ -196,7 +196,7 @@ async def get_token_metadata(token_id):
             "creator": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
             "type": "Logo",
             "assetHash": f"QmSimulated{token_id}",
-            "createdAt": "2023-06-15T12:00:00Z"
+            "createdAt": "2025-06-15T12:00:00Z"
         }
     except Exception as e:
         print(f"Error getting token metadata: {e}")
