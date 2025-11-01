@@ -27,7 +27,7 @@ jobs:
           git add -A
           git commit -m "commit of $date"
       - name: Push
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           directory: "."
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
